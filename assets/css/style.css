@@ -1,0 +1,215 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root{
+    /*====== COLORES =======*/
+    --first-color: #1A73EB;
+    --input-color:#80868B;
+    --border-color: #DADCE0;
+
+    /*===== FONT AND TYPOGRAPH ======*/
+    --body-font: 'Roboto',sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .75rem;
+}
+
+/*===== BASE STYLES  =======*/
+*,::before,::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 2rem 0 0 0;
+    padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    margin: 0;
+}
+.a__link{
+    color: var(--first-color);
+    cursor: pointer;
+}
+.a__link:hover{
+    color: var(--input-color);
+}
+.form__container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.form{
+    width: 430px;
+    padding: 4rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    animation-duration: .4s;
+    animation-name: animate-form;
+}
+@keyframes animate-form{
+    0%{
+        transform: scale3d(1,1);
+
+    }
+    50%{
+        transform: scale3d(1.1,1.1);
+        /* transform: scale(1.1,1.1); */
+    }
+    75%{
+        transform: scale3d(1.1,1.1,1.1);
+
+    }
+    100%{
+        transform: scale3d(1,1);
+    }
+}
+.form__title{
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #555;
+}
+.form__text{
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #555;
+}
+.form__div{
+    position: relative;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+.form__input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: var(--normal-font-size);
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    outline: none;
+    padding: 1rem;
+    background: none;
+    z-index: 1;
+}
+
+.form__label{
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0 .25rem;
+    background-color: #fff;
+    color: var(--input-color);
+    font-size: var(--normal-font-size);
+    transition: .3s;
+}
+
+.btn{
+    display: flex;
+
+    
+}
+.signin__signup{
+    display: block;
+    margin-right: auto;
+    padding: .75rem .1rem;
+    outline: none;
+    border: none;
+    font-size: var(--normal-font-size);
+    transition: .3s;
+}
+.form__btn{
+    display: block;
+    margin-left: auto;
+    padding: .75rem 2rem;
+    outline: none;
+    border: none;
+    background-color: var(--first-color);
+    color: #fff;
+    font-size: var(--normal-font-size);
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.form__btn:hover{
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15); 
+    background-color: #0d5dc5;
+    transition: .5s;
+}
+
+/*======= INPUT ON FOCUS MOVE UP LABEL ie. Username  ======*/
+.form__input:focus + .form__label{
+    top: -.5rem;
+    left: .8rem;
+    color: var(--first-color);
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    z-index: 10;
+}
+
+/*====== STICKING LABEL TO TOP WHILE INPUT HOLDS SOME VALUE =====*/
+.form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
+    top: -.5rem;
+    left: .8rem;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    z-index: 10;
+}
+.form__input:focus{
+    border: 1.5px solid var(--first-color);
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: var(--small-font-size);
+}
+.footer__div{
+    margin: 0 7rem 0 0;
+}
+
+.footer__list{
+    display: flex;
+    align-items: center;
+}
+.link__item{
+    margin: 0 1.5rem;
+    padding: 1.4rem 0;
+}
+/*=== THESE 2 CLASSES WILL BE ADDED AND GET REMOVED IN JS  ====*/
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}
+/*===== MEDIA QUERIES FOR RESPONSIVENESS  =====*/
+
+@media screen and (max-width:768px){
+    .form{
+        border:none;
+    }
+    .footer__div{
+        margin: 1rem;
+    }
+
+}
+@media screen and (max-width:438px){
+    .footer{
+        font-size: .50rem;
+    }
+
+}
